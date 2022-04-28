@@ -24,7 +24,7 @@ spec:
         app: movie-quotes-app
     spec:
       containers:
-      - image: europe-west4-docker.pkg.dev/learning-kubernetes-348509/hello-repo/movie-quote-app:0.2-amd64
+      - image: europe-west4-docker.pkg.dev/learning-kubernetes-348509/hello-repo/movie-quote-app:0.3-amd64
         imagePullPolicy: IfNotPresent
         name: movie-quote-app
         resources: {}

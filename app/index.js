@@ -12,6 +12,14 @@ app.get("/", (req, res) => {
     res.send(createResponse(1));
 });
 
+app.get("/error", (req, res) => {
+    res.status(500).send("Error on host: " + os.hostname());
+});
+
+app.get("/error2", (req, res) => {
+    throw new Error("Everything breaks!");
+});
+
 app.get("/:num", (req, res) => {
    res.send(createResponse(req.params.num));
 });
