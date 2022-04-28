@@ -9,19 +9,23 @@ app.listen(3000, () => {
 });
 
 app.get("/", (req, res) => {
+    console.log("In default get");
     res.send(createResponse(1));
 });
 
 app.get("/error", (req, res) => {
+    console.error("Manually returning error to client");
     res.status(500).send("Error on host: " + os.hostname());
 });
 
 app.get("/error2", (req, res) => {
+    console.error("Throwing error");
     throw new Error("Everything breaks!");
 });
 
 app.get("/:num", (req, res) => {
-   res.send(createResponse(req.params.num));
+    console.log("Returning", req.params.num, "quotes");
+    res.send(createResponse(req.params.num));
 });
 
 function createResponse(numQuotes = 1) {
